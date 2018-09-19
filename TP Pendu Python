@@ -1,0 +1,28 @@
+def cache(mot):
+  i=0
+  mot_c=str()
+
+  while i<len(mot):
+    mot_c=mot_c +"*"
+    i+=1
+  return mot_c
+
+
+def trouve_lettre(lettre,mot,mot_c):
+  """trouve si la lettre est dans le mot et la fait apparaitre dans le mot caché"""
+  i=0
+  while i<len(mot):
+    if mot[i]==lettre:
+     mot_c=mot_c[:i] + lettre + mot_c[i+1:]
+    i+=1
+  return(mot_c)
+
+
+
+mot=input("Mot a caché: ")
+lettre=input("lettre a trouver: ")
+mot_c=cache(mot)
+
+print(mot_c)
+mot_c=trouve_lettre(lettre,mot,mot_c)
+print(mot_c)
